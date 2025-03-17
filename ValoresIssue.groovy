@@ -13,6 +13,7 @@ def issue = issueManager.getIssueByCurrentKey(issueKey)
 
 if (issue) {
     // Obtener campos estándar
+    def keyIssue = issue.getKey()
     def summary = issue.getSummary()
     def description = issue.getDescription()
     def reporter = issue.getReporter()?.getDisplayName()
@@ -20,6 +21,7 @@ if (issue) {
     def status = issue.getStatus().getName()
 
     // Imprimir datos en consola
+    log.warn "Clave de la issue: ${keyIssue}"
     log.warn "Resumen: $summary"
     log.warn "Resumen: $summary"
     log.warn "Descripción: $description"
